@@ -1,13 +1,46 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'League Spartan', sans-serif;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+:root {
+  --violet: #7C5DFA;
+  --lightViolet: #9277FF;
+  --darkBlue: #1E2139;
+  --clay: #252945;
+  --lightBlue: #DFE3FA;
+  --gray: #888EB0;
+  --green: #33D69F;
+  --blue: #7E88C3;
+  --black: #0C0E16;
+  --red: #EC5757;
+  --pink: #FF9797;
+  --lightBg: #F8F8FB;
+  --darkBg: #141625;
+  --orange: #FF8F00;
+  --charcoal: #373B53;
 }
