@@ -39,8 +39,19 @@ a {
   --black: #0C0E16;
   --red: #EC5757;
   --pink: #FF9797;
-  --lightBg: #F8F8FB;
-  --darkBg: #141625;
+  --ghostWhite: #F8F8FB;
+  --eerieBlack: #141625;
   --orange: #FF8F00;
   --charcoal: #373B53;
+  --white: #FFF;
+  --background: var(--ghostWhite);
+  --textPrimary: var(--black);
+  --textSecondary: var(--gray);
+
+}
+
+[data-theme="dark"] {
+  --backgroun: var(--eerieBlack);
+  --textPrimary: var(--white);
+  --textSecondary: var(--lightBlue);
 }
