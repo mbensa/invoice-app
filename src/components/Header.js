@@ -1,6 +1,7 @@
 import React from "react";
+import ToggleIcon from "./ToggleIcon";
 import { ReactComponent as Logo } from "../assets/logo.svg";
-import { ReactComponent as Avatar } from "../assets/image-avatar.jpg";
+import avatar from "../assets/image-avatar.jpg";
 import "./header.css";
 
 export default function Header() {
@@ -8,10 +9,11 @@ export default function Header() {
     <header className="headerContainer">
       <div className="toggleContainer">
         <Logo className="mainLogo" />
+        <ToggleIcon />
       </div>
-      <hr></hr>
       <div className="avatarContainer">
-        <Avatar className="avatar" />
+        <hr className="headerLine"></hr>
+        <img className="avatarImg" src={avatar} alt="avatar image" />
       </div>
     </header>
   );

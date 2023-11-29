@@ -11,6 +11,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: 'League Spartan', sans-serif;
+  background-color: var(--background);
 }
 
 html {
@@ -47,11 +48,10 @@ a {
   --background: var(--ghostWhite);
   --textPrimary: var(--black);
   --textSecondary: var(--gray);
-
 }
 
 [data-theme="dark"] {
-  --backgroun: var(--eerieBlack);
+  --background: var(--eerieBlack);
   --textPrimary: var(--white);
   --textSecondary: var(--lightBlue);
 }

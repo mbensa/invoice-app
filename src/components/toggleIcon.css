@@ -1,0 +1,13 @@
+/****************************
+********Toggle Icon**********
+****************************/
+
+.toggleSwitchContainer {
+  padding: 0 24px;
+}
+
+@media (min-width: 1280px) {
+  .toggleSwitchContainer {
+    padding: 24px 0;
+  }
+}

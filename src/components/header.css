@@ -1,0 +1,62 @@
+/****************************
+**********Header*************
+****************************/
+
+.headerContainer {
+  background-color: var(--charcoal);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.toggleContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatarContainer {
+  display: flex;
+}
+
+.headerLine {
+  border: 1px solid #494E6E;
+}
+
+.avatarImg {
+  padding: 20px 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+@media (min-width: 1280px) {
+  .headerContainer {
+    width: 103px;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .toggleContainer {
+    flex-direction: column;
+    width: 103px;
+    height: 100vh;
+  }
+
+  .mainLogo {
+    width: 103px;
+    height: 103px;
+  }
+
+  .avatarContainer {
+    width: 103px;
+    flex-direction: column;
+  }
+
+  .avatarImg {
+    width: 40px;
+    height: 40px;
+    padding: 24px 31px;
+  }
+};
