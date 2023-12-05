@@ -1,0 +1,53 @@
+/********************************
+*************Filter**************
+********************************/
+@media (max-width: 767px) {
+  .mobileText {
+    display: flex;
+  }
+  .desktopText {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileText {
+    display: none;
+  }
+  .desktopText {
+    display: flex;
+  }
+}
+
+.filterDropdown {
+  font-size: 0.938rem;
+  font-weight: 700;
+  color: var(--textPrimary);
+  letter-spacing: -0.3px;
+  width: 192px;
+  height: 128px;
+  border-radius: 8px;
+  box-shadow: 0px 10px 20px 0px rgba(72, 84, 159, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 23px;
+}
+
+.mobileText, .desktopText {
+  padding-right: 12px;
+}
+
+.filterContainer {
+  width: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

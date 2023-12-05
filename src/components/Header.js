@@ -13,7 +13,7 @@ export default function Header() {
       </div>
       <div className="avatarContainer">
         <hr className="headerLine"></hr>
-        <img className="avatarImg" src={avatar} alt="avatar image" />
+        <img className="avatarImg" src={avatar} alt="user's avatar" />
       </div>
     </header>
   );

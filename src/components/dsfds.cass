@@ -1,0 +1,9 @@
+    <div className="checkbox">
+      <input type="checkbox" id={id} />
+      <span className="checkmark"></span>
+      <label className="labelContainer" htmlFor={id}>
+        {children}
+      </label>
+    </div>
+  );
+}
