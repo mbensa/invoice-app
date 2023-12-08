@@ -1,0 +1,69 @@
+/**************************
+**********Button***********
+**************************/
+.button {
+  padding: 6px 10px;
+  border-radius: 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.buttonPrimary {
+  background-color: var(--violet);
+  color: var(--white);
+}
+
+.buttonPrimary:hover {
+  background-color: var(--lightViolet);
+}
+
+.buttonPrimary .icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 8px;
+}
+
+.buttonChange {
+  background-color: var(--buttonChange);
+  color: var(--buttonChangeText);
+ }
+
+.buttonChange:hover {
+  background-color: var(--buttonChangeHover);
+  color: var(--buttonChangeHoverText);
+ }
+
+ .buttonSaveDraft {
+  background-color: var(--charcoal);
+  color: var(--textSecondary);
+ }
+
+ .buttonSaveDraft:hover {
+  background-color: var(--buttonSaveDraftHover);
+ }
+
+ .buttonDelete {
+  background-color: var(--red);
+  color: var(--white);
+ }
+
+ .buttonDelete:hover {
+  background-color: var(--pink);
+ }
+
+ .buttonAdd {
+  background-color: var(--lightGray);
+  color: var(--blue);
+
+ }
+
+ .buttonAdd:hover {
+  background-color: var(--lightBlue);
+ }
+

@@ -1,11 +1,14 @@
 import "./App.css";
-
-import Filter from "./components/Filter";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 export default function App() {
   return (
     <div className="app">
-      <Filter></Filter>
+      <Header />
+      <main>
+        <Main />
+      </main>
     </div>
   );
 }

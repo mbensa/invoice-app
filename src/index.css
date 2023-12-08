@@ -35,6 +35,7 @@ a {
   --clay: #252945;
   --lightBlue: #DFE3FA;
   --gray: #888EB0;
+  --lightGray: #F9FAFE;
   --green: #33D69F;
   --blue: #7E88C3;
   --black: #0C0E16;
@@ -48,10 +49,19 @@ a {
   --background: var(--ghostWhite);
   --textPrimary: var(--black);
   --textSecondary: var(--gray);
+  --buttonChange: var(--lightGray);
+  --buttonChangeText: var(--blue);
+  --buttonChangeHover: var(--lightBlue);
+  --buttonSaveDraftHover: var(--black);
 }
 
 [data-theme="dark"] {
   --background: var(--eerieBlack);
   --textPrimary: var(--white);
   --textSecondary: var(--lightBlue);
+  --buttonChange: var(--clay);
+  --buttonChangeText: var(--lightBlue);
+  --buttonChangeHover: var(--white);
+  --buttonSaveDraftHover: var(--darkBlue);
 }
+

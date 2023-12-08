@@ -4,6 +4,7 @@
 
 .toggleSwitchContainer {
   padding: 0 24px;
+  cursor: pointer;
 }
 
 @media (min-width: 1280px) {
