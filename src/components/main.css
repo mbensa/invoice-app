@@ -1,0 +1,15 @@
+/****************************
+************Main*************
+****************************/
+.mainContentContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContentContainer p {
+  width: 200px;
+  text-align: center;
+}

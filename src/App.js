@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header";
-import MainHeader from "./components/MainHeader";
+import Main from "./components/Main";
 
 export default function App() {
   return (
     <div className="app">
       <Header />
       <main className="main">
-        <MainHeader />
+        <Main />
       </main>
     </div>
   );
