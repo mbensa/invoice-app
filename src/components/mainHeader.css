@@ -1,0 +1,17 @@
+/**************************
+**********Main*************
+**************************/
+
+.mainHeaderContainer {
+  display: flex;
+  padding: 34px 24px 0 24px;
+}
+
+.mainHeaderText {
+  width: 100%;
+}
+
+.mainHeaderComponents {
+  display: flex;
+  align-items: center;
+}
