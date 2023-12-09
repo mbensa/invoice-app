@@ -3,8 +3,11 @@ import "./mainHeader.css";
 import Button from "./Button";
 import Filter from "./Filter";
 import Text from "./Text";
+import useMobile from "../hooks/useMobile";
 
 export default function MainHeader() {
+  const { isMobile } = useMobile();
+
   return (
     <div className="mainHeaderContainer">
       <div className="mainHeaderText">
@@ -13,7 +16,7 @@ export default function MainHeader() {
       </div>
       <div className="mainHeaderComponents">
         <Filter />
-        <Button className="buttonPrimary" icon btnText="New" />
+        <Button className="buttonPrimary" icon btnText={isMobile ? "New" : "New Invoice"} />
       </div>
     </div>
   );

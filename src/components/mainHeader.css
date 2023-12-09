@@ -9,9 +9,23 @@
 
 .mainHeaderText {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mainHeaderComponents {
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mainHeaderComponents {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .mainHeaderContainer {
+    padding: 56px 48px 0 48px;
+  }
 }

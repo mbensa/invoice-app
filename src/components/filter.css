@@ -5,6 +5,7 @@
   .mobileText {
     display: flex;
   }
+
   .desktopText {
     display: none;
   }
@@ -14,6 +15,7 @@
   .mobileText {
     display: none;
   }
+
   .desktopText {
     display: flex;
   }

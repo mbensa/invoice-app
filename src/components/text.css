@@ -3,11 +3,11 @@
 ********************************/
 
 h1 {
-  font-size: 2rem;
-  line-height: 2.25rem;
-  font-weight: 700;
   color: var(--textPrimary);
   letter-spacing: -1px;
+  font-size: 1.25rem;
+  line-height: normal;
+    etter-spacing: -0.63px;
 }
 
 h2 {
@@ -52,8 +52,8 @@ p {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 1.25rem;
-    line-height: normal;
-    letter-spacing: -0.63px;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  font-weight: 700;
   }
 };
