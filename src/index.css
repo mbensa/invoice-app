@@ -53,6 +53,9 @@ a {
   --buttonChangeText: var(--blue);
   --buttonChangeHover: var(--lightBlue);
   --buttonSaveDraftHover: var(--black);
+  --inputBackground: var(--white);
+  --inputBorderColor: var(--lightBlue);
+  --datePickerBackground: var(--white);
 }
 
 [data-theme="dark"] {
@@ -63,5 +66,8 @@ a {
   --buttonChangeText: var(--lightBlue);
   --buttonChangeHover: var(--white);
   --buttonSaveDraftHover: var(--darkBlue);
+  --inputBackground: var(--darkBlue);
+  --inputBorderColor: var(--clay);
+  --datePickerBackground: var(--clay);
 }
 
