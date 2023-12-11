@@ -1,6 +1,9 @@
 /**************************
 ********Date Picker********
 **************************/
+.react-datepicker-wrapper {
+  display: flex;
+}
 
 .customInput {
   cursor: pointer;
@@ -15,11 +18,22 @@
   line-height: 15px;
   letter-spacing: -0.25px;
   height: 48px;
+  width: 100%;
+}
+
+.customInput:focus-visible {
+  outline: #7C5DFA solid 1px;
 }
 
 .calendarIcon {
-  top: 13px;
-  left: 114px;
+  margin-right: 20px;
+}
+
+.react-datepicker__input-container {
+  display: flex;
+  margin: 0 24px;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .react-datepicker__day-name {
@@ -43,6 +57,7 @@
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  margin-left: 24px;
 }
 
 .react-datepicker__year-read-view--down-arrow, .react-datepicker__month-read-view--down-arrow, .react-datepicker__month-year-read-view--down-arrow, .react-datepicker__navigation-icon::before {
