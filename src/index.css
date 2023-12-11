@@ -56,6 +56,7 @@ a {
   --inputBackground: var(--white);
   --inputBorderColor: var(--lightBlue);
   --datePickerBackground: var(--white);
+  --dropDownDivider: var(--lightBlue);
 }
 
 [data-theme="dark"] {
@@ -69,5 +70,6 @@ a {
   --inputBackground: var(--darkBlue);
   --inputBorderColor: var(--clay);
   --datePickerBackground: var(--clay);
+  --dropDownDivider: var(--darkBlue);
 }
 
