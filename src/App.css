@@ -11,6 +11,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0 24px;
 }
 
 @media (min-width: 1280px) {
