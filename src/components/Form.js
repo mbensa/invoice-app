@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./form.css";
 import { useForm } from "react-hook-form";
 import InputBox from "./InputBox";
@@ -13,6 +13,29 @@ export default function Form() {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
+
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    calculateTotal(quantity, price);
+  }, [quantity, price]);
+
+  const handleQuantityChange = (event) => {
+    const newQuantity = parseInt(event.target.value);
+    setQuantity(newQuantity);
+  };
+
+  const handlePriceChange = (event) => {
+    const newPrice = parseInt(event.target.value);
+    setPrice(newPrice);
+  };
+
+  const calculateTotal = (newQuantity, newPrice) => {
+    const newTotal = newQuantity * newPrice;
+    setTotal(newTotal);
+  };
 
   const onSubmit = (data) => console.log(data);
 
@@ -111,6 +134,7 @@ export default function Form() {
         <div>
           <Text type="p">Invoice Date</Text>
           <DatePicker />
+
           <Text type="p">Payment Terms</Text>
           <DropDown />
         </div>
@@ -144,6 +168,7 @@ export default function Form() {
             inputName="quantity"
             errors={errors}
             label="Qty."
+            onChange={handleQuantityChange}
           />
           <InputBox
             type="number"
@@ -152,11 +177,12 @@ export default function Form() {
             inputName="price"
             errors={errors}
             label="Price"
+            onChange={handlePriceChange}
           />
           <div>
             <Text type="p">Total</Text>
-            <Text type="p" className="price">
-              <b>156.00</b>
+            <Text type="p" className="totalPrice">
+              <b>{isNaN(total) ? "0" : total}</b>
             </Text>
           </div>
           <div className="deleteIconContainer">

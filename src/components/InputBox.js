@@ -2,7 +2,7 @@ import React from "react";
 import "./inputBox.css";
 
 export default function InputBox(props) {
-  const { id, inputName, register, errors, label, type } = props;
+  const { id, inputName, register, errors, label, type, onChange } = props;
 
   return (
     <div className="inputContainer">
@@ -18,6 +18,7 @@ export default function InputBox(props) {
         {...register(inputName, { required: true })}
         aria-invalid={errors.inputName ? "true" : "false"}
         className="input"
+        onChange={onChange}
       />
     </div>
   );
