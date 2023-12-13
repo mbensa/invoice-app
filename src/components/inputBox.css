@@ -7,7 +7,7 @@
   border: 1px solid var(--inputBorderColor);
   background: var(--inputBackground);
   color: var(--textPrimary);
-  font-family: Spartan;
+  font-family: 'League Spartan', sans-serif;
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
@@ -15,5 +15,22 @@
   letter-spacing: -0.25px;
   height: 48px;
   padding: 0 20px;
+  cursor: pointer;
 }
 
+.input:hover{
+  border: 1px solid var(--violet);
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputLabel {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+  color: var(--textSecondary);
+  letter-spacing: -0.2px;
+}

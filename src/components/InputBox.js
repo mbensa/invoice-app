@@ -2,11 +2,23 @@ import React from "react";
 import "./inputBox.css";
 
 export default function InputBox(props) {
-  const { id, inputName, placeholder, className, register } = props;
+  const { id, inputName, register, errors, label, type } = props;
 
   return (
-    <div className={className}>
-      <input type="input" id={id} {...register(inputName)} placeholder={placeholder} className="input" />
+    <div className="inputContainer">
+      <label htmlFor={inputName} className="inputLabel">
+        {label}
+      </label>
+      {errors[inputName]?.type === "required" && (
+        <p role="alert">Can't be empty</p>
+      )}
+      <input
+        type={type}
+        id={id}
+        {...register(inputName, { required: true })}
+        aria-invalid={errors.inputName ? "true" : "false"}
+        className="input"
+      />
     </div>
   );
 }

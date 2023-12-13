@@ -1,0 +1,39 @@
+/****************************
+************Form*************
+****************************/
+.inputCityContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputCityContainer .inputContainer {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+.inputCityContainer .inputContainer:nth-child(3) {
+  flex-basis: 100%;
+}
+
+.formItemListText {
+  color: #777F98;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: -0.375px;
+}
+
+.priceContainer {
+  display: flex;
+}
+
+.price {
+  padding-top: 15px;
+}
+
+.deleteIconContainer {
+  padding-top: 32px;
+  cursor: pointer;
+}
