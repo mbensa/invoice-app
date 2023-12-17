@@ -63,9 +63,65 @@
   flex-direction: column;
 }
 
+.dateTermsContainer {
+  margin-bottom: 24px;
+}
+
+.invoiceDateContainer {
+  margin-bottom: 24px;
+}
+
+.billInputHeading {
+  color: var(--violet);
+  margin-bottom: 36px;
+}
+
 @media (min-width: 768px) {
   .formContainer {
     height: 100%;
+    width: 600px;
   }
+
+  .inputCityContainer {
+    flex-wrap: nowrap;
+  }
+
+  .inputCityContainer .inputContainer {
+    flex: auto;
+    margin-right: 24px;
+  }
+
+  .inputCityContainer .inputContainer:nth-child(3) {
+    flex-basis: auto;
+    margin-right: 0;
+  }
+
+  .dateTermsContainer {
+    display: flex;
+  }
+
+  .invoiceDateContainer {
+    margin-right: 24px;
+    width: 50%;
+  }
+
+  .paymentTermsContainer {
+    width: 50%;
+  }
+
+  .itemListContainer {
+    display: flex;
+  }
+
+  .itemListContainer > .inputContainer {
+    width: 43%;
+    margin-right: 24px;
+  }
+
+  .totalPriceContainer {
+    margin-right: 24px;
+    width: 50px;
+  }
+
 }
 

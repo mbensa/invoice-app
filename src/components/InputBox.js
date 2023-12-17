@@ -6,12 +6,16 @@ export default function InputBox(props) {
 
   return (
     <div className="inputContainer">
-      <label htmlFor={inputName} className="inputLabel">
-        {label}
-      </label>
-      {errors[inputName]?.type === "required" && (
-        <p role="alert">Can't be empty</p>
-      )}
+      <div>
+        <label htmlFor={inputName} className="inputLabel">
+          {label}
+        </label>
+        {errors[inputName]?.type === "required" && (
+          <p className="alert" role="alert">
+            Can't be empty
+          </p>
+        )}
+      </div>
       <input
         type={type}
         id={id}

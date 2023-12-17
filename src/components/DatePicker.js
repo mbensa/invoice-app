@@ -10,23 +10,16 @@ export default function DatePicker(props) {
     <Controller
       control={props.control}
       name="ReactDatepicker"
-      render={({ field: { onChange, value } }) => {
-        const handleChange = (event) => {
-          console.log(event);
-          onChange(event);
-        };
-
-        return (
-          <ReactDatePicker
-            showIcon
-            selected={value}
-            onChange={handleChange}
-            icon={<CalendarIcon className="calendarIcon" />}
-            className="customInput"
-            showPopperArrow={false}
-          />
-        );
-      }}
+      render={({ field: { onChange, value = new Date() } }) => (
+        <ReactDatePicker
+          showIcon
+          selected={value}
+          onChange={onChange}
+          icon={<CalendarIcon className="calendarIcon" />}
+          className="customInput"
+          showPopperArrow={false}
+        />
+      )}
     />
   );
 }

@@ -65,7 +65,9 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="formContainer">
       <div>
-        <Text type="h5">Bill From</Text>
+        <Text type="h5" className="billInputHeading">
+          Bill From
+        </Text>
         <InputBox
           type="text"
           register={register}
@@ -103,7 +105,9 @@ export default function Form() {
       </div>
 
       <div>
-        <Text type="h5">Bill To</Text>
+        <Text type="h5" className="billInputHeading">
+          Bill To
+        </Text>
         <InputBox
           type="text"
           register={register}
@@ -154,12 +158,15 @@ export default function Form() {
             label="Country"
           />
         </div>
-        <div>
-          <Text type="p">Invoice Date</Text>
-          <DatePicker control={control} />
-
-          <Text type="p">Payment Terms</Text>
-          <DropDown setValue={setValue} control={control} />
+        <div className="dateTermsContainer">
+          <div className="invoiceDateContainer">
+            <Text type="p">Invoice Date</Text>
+            <DatePicker control={control} />
+          </div>
+          <div className="paymentTermsContainer">
+            <Text type="p">Payment Terms</Text>
+            <DropDown setValue={setValue} control={control} />
+          </div>
         </div>
         <InputBox
           type="text"

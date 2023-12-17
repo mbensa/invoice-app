@@ -25,6 +25,7 @@
 .inputContainer {
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .inputLabel {
@@ -33,4 +34,8 @@
   font-weight: 500;
   color: var(--textSecondary);
   letter-spacing: -0.2px;
+}
+
+.alert {
+  color: var(--red);
 }
