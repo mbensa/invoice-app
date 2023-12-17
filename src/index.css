@@ -47,9 +47,13 @@ a {
   --charcoal: #373B53;
   --white: #FFF;
   --background: var(--ghostWhite);
+  --backgroundForm: var(--white);
   --textPrimary: var(--black);
   --textSecondary: var(--gray);
   --buttonChange: var(--lightGray);
+  --buttonAdd: var(--lightGray);
+  --buttonAddHover: var(--lightBlue);
+  --buttonAddText: var(--blue);
   --buttonChangeText: var(--blue);
   --buttonChangeHover: var(--lightBlue);
   --buttonSaveDraftHover: var(--black);
@@ -61,9 +65,13 @@ a {
 
 [data-theme="dark"] {
   --background: var(--eerieBlack);
+  --backgroundForm: var(--eerieBlack);
   --textPrimary: var(--white);
   --textSecondary: var(--lightBlue);
   --buttonChange: var(--clay);
+  --buttonAdd: var(--clay);
+  --buttonAddHover: var(--darkBlue);
+  --buttonAddText: var(--white);
   --buttonChangeText: var(--lightBlue);
   --buttonChangeHover: var(--white);
   --buttonSaveDraftHover: var(--darkBlue);

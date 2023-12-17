@@ -62,6 +62,10 @@
   letter-spacing: -0.25px;
 }
 
+.react-datepicker-popper {
+  z-index: 100;
+}
+
 .react-datepicker__view-calendar-icon input {
   padding: 0 20px;
 }

@@ -2,7 +2,7 @@
 **********Button***********
 **************************/
 .button {
-  padding: 6px 10px;
+  padding: 17px 10px;
   border-radius: 24px;
   border: none;
   display: flex;
@@ -11,6 +11,7 @@
   line-height: 0.9rem;
   font-weight: 700;
   letter-spacing: -0.2px;
+  cursor: pointer;
 }
 
 .buttonPrimary {
@@ -58,12 +59,21 @@
  }
 
  .buttonAdd {
-  background-color: var(--lightGray);
-  color: var(--blue);
+  background-color: var(--buttonAdd);
+  color: var(--buttonAddText);
+  display: flex;
+  justify-content: center;
+ }
 
+ .buttonAdd svg path{
+  fill: var(--blue);
+ }
+
+ .buttonAdd svg {
+  padding-right: 10px;
  }
 
  .buttonAdd:hover {
-  background-color: var(--lightBlue);
+  background-color: var(--buttonAddHover);
  }
 

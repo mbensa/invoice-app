@@ -1,6 +1,11 @@
 /****************************
 ************Form*************
 ****************************/
+.formContainer {
+  padding: 0 24px;
+  background-color: var(--backgroundForm);
+}
+
 .inputCityContainer {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +30,10 @@
   letter-spacing: -0.375px;
 }
 
+.itemListContainer {
+  margin-bottom: 48px;
+}
+
 .priceContainer {
   display: flex;
 }
@@ -34,6 +43,29 @@
 }
 
 .deleteIconContainer {
-  padding-top: 32px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+.priceContainer .inputContainer:first-child {
+  width: 100px;
+  margin-right: 16px;
+}
+
+.priceContainer .inputContainer:nth-child(2) {
+  width: 100px;
+  margin-right: 16px;
+}
+
+.totalPriceContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .formContainer {
+    height: 100%;
+  }
+}
+

@@ -5,15 +5,19 @@ import InputBox from "./InputBox";
 import Text from "./Text";
 import DropDown from "./DropDown";
 import DatePicker from "./DatePicker";
+import Button from "./Button";
 import { ReactComponent as DeleteIcon } from "../assets/icon-delete.svg";
 
 export default function Form() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
+    setValue,
   } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
 
+  //calculate the total price
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [total, setTotal] = useState(0);
@@ -37,10 +41,29 @@ export default function Form() {
     setTotal(newTotal);
   };
 
-  const onSubmit = (data) => console.log(data);
+  //add or delete another new item
+  const [itemContainers, setItemContainers] = useState([{ id: 1 }]);
+
+  const handleAddNewItem = () => {
+    const newItemList = [...itemContainers, { id: itemContainers.length + 1 }];
+    setItemContainers(newItemList);
+  };
+
+  const handleRemoveItem = (id) => {
+    const updatedItemList = itemContainers.filter((item) => item.id !== id);
+    setItemContainers(updatedItemList);
+  };
+
+  const onSubmit = (data) => {
+    console.log(data);
+
+    if (data.ReactDatepicker) {
+      console.log(new Date(data.ReactDatepicker).toLocaleDateString());
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="formContainer">
       <div>
         <Text type="h5">Bill From</Text>
         <InputBox
@@ -133,10 +156,10 @@ export default function Form() {
         </div>
         <div>
           <Text type="p">Invoice Date</Text>
-          <DatePicker />
+          <DatePicker control={control} />
 
           <Text type="p">Payment Terms</Text>
-          <DropDown />
+          <DropDown setValue={setValue} control={control} />
         </div>
         <InputBox
           type="text"
@@ -151,45 +174,54 @@ export default function Form() {
       <Text type="h3" className="formItemListText">
         Item List
       </Text>
-      <div>
-        <InputBox
-          type="text"
-          register={register}
-          id="item"
-          inputName="item"
-          errors={errors}
-          label="Item Name"
-        />
-        <div className="priceContainer">
+      {itemContainers.map((item) => (
+        <div key={item.id} className="itemListContainer">
           <InputBox
-            type="number"
+            type="text"
             register={register}
-            id="quantity"
-            inputName="quantity"
+            id={`item-${item.id}`}
+            inputName={`item-${item.id}`}
             errors={errors}
-            label="Qty."
-            onChange={handleQuantityChange}
+            label="Item Name"
           />
-          <InputBox
-            type="number"
-            register={register}
-            id="price"
-            inputName="price"
-            errors={errors}
-            label="Price"
-            onChange={handlePriceChange}
-          />
-          <div>
-            <Text type="p">Total</Text>
-            <Text type="p" className="totalPrice">
-              <b>{isNaN(total) ? "0" : total}</b>
-            </Text>
-          </div>
-          <div className="deleteIconContainer">
-            <DeleteIcon />
+          <div className="priceContainer">
+            <InputBox
+              type="number"
+              register={register}
+              id={`quantity-${item.id}`}
+              inputName={`quantity-${item.id}`}
+              errors={errors}
+              label="Qty."
+              onChange={handleQuantityChange}
+            />
+            <InputBox
+              type="number"
+              register={register}
+              id={`price-${item.id}`}
+              inputName={`price-${item.id}`}
+              errors={errors}
+              label="Price"
+              onChange={handlePriceChange}
+            />
+            <div className="totalPriceContainer">
+              <Text type="p">Total</Text>
+              <Text type="p" className="totalPrice">
+                <b>{isNaN(total) ? "0" : total}</b>
+              </Text>
+            </div>
+            <div className="deleteIconContainer">
+              <DeleteIcon onClick={() => handleRemoveItem(item.id)} />
+            </div>
           </div>
         </div>
-      </div>
+      ))}
+      <Button
+        icon
+        fluid
+        btnText="Add New Item"
+        className="buttonAdd"
+        onClick={handleAddNewItem}
+      />
       <input type="submit" />
     </form>
   );
