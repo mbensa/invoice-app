@@ -22,6 +22,11 @@
   border: 1px solid var(--violet);
 }
 
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .inputContainer {
   display: flex;
   flex-direction: column;
@@ -38,4 +43,16 @@
 
 .alert {
   color: var(--red);
+}
+
+/* Chrome, Safari, Edge, Opera, remove arrow*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox, remove arrows */
+input[type=number] {
+  -moz-appearance: textfield;
 }

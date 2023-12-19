@@ -6,7 +6,7 @@ export default function InputBox(props) {
 
   return (
     <div className="inputContainer">
-      <div>
+      <div className="labelContainer">
         <label htmlFor={inputName} className="inputLabel">
           {label}
         </label>

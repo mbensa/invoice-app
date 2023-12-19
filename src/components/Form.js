@@ -93,6 +93,7 @@ export default function Form() {
             errors={errors}
             label="Post Code"
           />
+
           <InputBox
             type="text"
             register={register}
@@ -149,6 +150,7 @@ export default function Form() {
             errors={errors}
             label="Post Code"
           />
+
           <InputBox
             type="text"
             register={register}
@@ -212,9 +214,11 @@ export default function Form() {
             />
             <div className="totalPriceContainer">
               <Text type="p">Total</Text>
-              <Text type="p" className="totalPrice">
-                <b>{isNaN(total) ? "0" : total}</b>
-              </Text>
+              <div className="numberPriceContainer">
+                <Text type="p" className="totalPrice">
+                  <b>{isNaN(total) ? "0" : total}</b>
+                </Text>
+              </div>
             </div>
             <div className="deleteIconContainer">
               <DeleteIcon onClick={() => handleRemoveItem(item.id)} />
