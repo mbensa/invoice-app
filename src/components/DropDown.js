@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as ArrowUpIcon } from "../assets/icon-arrow-up.svg";
 import { ReactComponent as ArrowDownIcon } from "../assets/icon-arrow-down.svg";
 import "./dropDown.css";
@@ -18,6 +18,10 @@ export default function DropDown(props) {
     setSelectedOption(option);
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    props.setValue("dropdown", defaultOption);
+  }, []);
 
   return (
     <Controller

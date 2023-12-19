@@ -1,0 +1,41 @@
+/****************************
+*********New Invoice*********
+****************************/
+.newInvoiceContainer {
+  background-color: var(--backgroundForm);
+  height: 100%;
+}
+
+.goBackContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  cursor: pointer;
+  padding: 32px 0 24px 24px;
+}
+
+.newInvoiceContainer > h2 {
+  padding-left: 24px;
+}
+
+@media (min-width: 768px) {
+  .outerContainer {
+    height: 100vh;
+    overflow: hidden;
+    width: 648px;
+    border-radius: 0px 20px 20px 0px;
+  }
+
+  .newInvoiceContainer {
+    width: 648px;
+    overflow-y: auto;
+  }
+
+  .newInvoiceContainer > h2 {
+    padding-top: 56px;
+  }
+
+  .goBackContainer {
+    display: none;
+  }
+}

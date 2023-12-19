@@ -163,7 +163,7 @@ export default function Form() {
         <div className="dateTermsContainer">
           <div className="invoiceDateContainer">
             <Text type="p">Invoice Date</Text>
-            <DatePicker control={control} />
+            <DatePicker control={control} setValue={setValue} />
           </div>
           <div className="paymentTermsContainer">
             <Text type="p">Payment Terms</Text>
