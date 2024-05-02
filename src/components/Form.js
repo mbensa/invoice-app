@@ -7,15 +7,22 @@ import DropDown from "./DropDown";
 import DatePicker from "./DatePicker";
 import Button from "./Button";
 import { ReactComponent as DeleteIcon } from "../assets/icon-delete.svg";
+import { useLocalStorage } from "usehooks-ts";
 
-export default function Form() {
+export default function Form(newInvoice) {
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
     setValue,
-  } = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
+  } = useForm({
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
+  });
+
+  //put
+  const [value, setInvoice, removeInvoice] = useLocalStorage("test-key", {});
 
   //calculate the total price
   const [quantity, setQuantity] = useState(0);
@@ -56,6 +63,7 @@ export default function Form() {
 
   const onSubmit = (data) => {
     console.log(data);
+    setInvoice(data);
 
     if (data.ReactDatepicker) {
       console.log(new Date(data.ReactDatepicker).toLocaleDateString());
@@ -234,6 +242,16 @@ export default function Form() {
         onClick={handleAddNewItem}
       />
       <input type="submit" />
+      {newInvoice && (
+        <>
+          <div className="bottomGradient"></div>
+          <div className="buttonContainer">
+            <Button btnText="Discard" className="buttonChange" />
+            <Button btnText="Save as Draft" className="buttonSaveDraft" />
+            <Button btnText="Save & Send" className="buttonPrimary" />
+          </div>
+        </>
+      )}
     </form>
   );
 }
