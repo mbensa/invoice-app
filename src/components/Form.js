@@ -7,9 +7,10 @@ import DropDown from "./DropDown";
 import DatePicker from "./DatePicker";
 import Button from "./Button";
 import { ReactComponent as DeleteIcon } from "../assets/icon-delete.svg";
-import { useLocalStorage } from "usehooks-ts";
 
-export default function Form(newInvoice) {
+export default function Form(props) {
+  const { newInvoice, editInvoice, onSubmit } = props;
+
   const {
     register,
     handleSubmit,
@@ -20,9 +21,6 @@ export default function Form(newInvoice) {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
-
-  //put
-  const [value, setInvoice, removeInvoice] = useLocalStorage("test-key", {});
 
   //calculate the total price
   const [quantity, setQuantity] = useState(0);
@@ -59,15 +57,6 @@ export default function Form(newInvoice) {
   const handleRemoveItem = (id) => {
     const updatedItemList = itemContainers.filter((item) => item.id !== id);
     setItemContainers(updatedItemList);
-  };
-
-  const onSubmit = (data) => {
-    console.log(data);
-    setInvoice(data);
-
-    if (data.ReactDatepicker) {
-      console.log(new Date(data.ReactDatepicker).toLocaleDateString());
-    }
   };
 
   return (
@@ -241,16 +230,32 @@ export default function Form(newInvoice) {
         className="buttonAdd"
         onClick={handleAddNewItem}
       />
-      <input type="submit" />
       {newInvoice && (
-        <>
-          <div className="bottomGradient"></div>
-          <div className="buttonContainer">
-            <Button btnText="Discard" className="buttonChange" />
-            <Button btnText="Save as Draft" className="buttonSaveDraft" />
-            <Button btnText="Save & Send" className="buttonPrimary" />
-          </div>
-        </>
+        <div className="buttonContainer buttonContainerNewInvoice">
+          <Button
+            btnText="Discard"
+            className="buttonChange btnDiscardNewInvoice"
+          />
+          <Button
+            btnText="Save as Draft"
+            className="buttonSaveDraft btnSaveDraftNewInvoice"
+          />
+          <Button
+            btnText="Save & Send"
+            className="buttonPrimary"
+            type="submit"
+          />
+        </div>
+      )}
+      {editInvoice && (
+        <div className="buttonContainer buttonContainerEditInvoice">
+          <Button btnText="Cancel" className="buttonChange" />
+          <Button
+            btnText="Save Changes"
+            className="buttonPrimary"
+            type="submit"
+          />
+        </div>
       )}
     </form>
   );

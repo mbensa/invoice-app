@@ -2,21 +2,26 @@ import React from "react";
 import "./newInvoice.css";
 import Text from "./Text";
 import Form from "./Form";
-import Button from "./Button";
 import { ReactComponent as ArrowLeft } from "../assets/icon-arrow-left.svg";
+import { useLocalStorage } from "usehooks-ts";
+import { v4 as uuidv4 } from "uuid";
 
 export default function NewInvoice() {
-  /**
-   * TODOs:
-   * 1. Use `useLocalStorage` here.
-   * 2. Move action buttons into the form with a render prop.
-   * 3. Write the handler handleSubmit:
-   *  3.1. Should accept the form object
-   *  3.2. Should create a unique form ID (uuid or some other helpers to create unique ids)
-   *  3.3. Should define a type (draft or normal)
-   *  3.4. Should save everything to local storage [{id, type, data}]
-   * 4. Pass a handler handleSubmit to the form prop (onSubmit).
-   */
+  const [storedInvoices, setStoredInvoices] = useLocalStorage("invoices", []);
+
+  const handleSubmit = (data) => {
+    if (data.ReactDatepicker) {
+      console.log(new Date(data.ReactDatepicker).toLocaleDateString());
+    }
+    const uniqueFormID = uuidv4();
+
+    const newFormData = { id: uniqueFormID, data: data };
+    const updatedInvoices = [...storedInvoices, newFormData];
+    setStoredInvoices(updatedInvoices);
+
+    console.log("Form submitted with ID:", uniqueFormID);
+    console.log("Form data:", data);
+  };
 
   return (
     <div className="outerContainer">
@@ -26,7 +31,7 @@ export default function NewInvoice() {
           <Text type="h5">Go back</Text>
         </div>
         <Text type="h2">New Invoice</Text>
-        <Form />
+        <Form newInvoice onSubmit={handleSubmit} />
       </div>
     </div>
   );
