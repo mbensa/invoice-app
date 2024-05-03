@@ -6,7 +6,7 @@ import Text from "./Text";
 import DropDown from "./DropDown";
 import DatePicker from "./DatePicker";
 import Button from "./Button";
-import { ReactComponent as DeleteIcon } from "../assets/icon-delete.svg";
+import NewItemInvoice from "./NewItemInvoice";
 
 export default function Form(props) {
   const { newInvoice, editInvoice, onSubmit } = props;
@@ -21,30 +21,6 @@ export default function Form(props) {
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
-
-  //calculate the total price
-  const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    calculateTotal(quantity, price);
-  }, [quantity, price]);
-
-  const handleQuantityChange = (event) => {
-    const newQuantity = parseInt(event.target.value);
-    setQuantity(newQuantity);
-  };
-
-  const handlePriceChange = (event) => {
-    const newPrice = parseInt(event.target.value);
-    setPrice(newPrice);
-  };
-
-  const calculateTotal = (newQuantity, newPrice) => {
-    const newTotal = newQuantity * newPrice;
-    setTotal(newTotal);
-  };
 
   //add or delete another new item
   const [itemContainers, setItemContainers] = useState([{ id: 1 }]);
@@ -181,47 +157,12 @@ export default function Form(props) {
         Item List
       </Text>
       {itemContainers.map((item) => (
-        <div key={item.id} className="itemListContainer">
-          <InputBox
-            type="text"
-            register={register}
-            id={`item-${item.id}`}
-            inputName={`item-${item.id}`}
-            errors={errors}
-            label="Item Name"
-          />
-          <div className="priceContainer">
-            <InputBox
-              type="number"
-              register={register}
-              id={`quantity-${item.id}`}
-              inputName={`quantity-${item.id}`}
-              errors={errors}
-              label="Qty."
-              onChange={handleQuantityChange}
-            />
-            <InputBox
-              type="number"
-              register={register}
-              id={`price-${item.id}`}
-              inputName={`price-${item.id}`}
-              errors={errors}
-              label="Price"
-              onChange={handlePriceChange}
-            />
-            <div className="totalPriceContainer">
-              <Text type="p">Total</Text>
-              <div className="numberPriceContainer">
-                <Text type="p" className="totalPrice">
-                  <b>{isNaN(total) ? "0" : total}</b>
-                </Text>
-              </div>
-            </div>
-            <div className="deleteIconContainer">
-              <DeleteIcon onClick={() => handleRemoveItem(item.id)} />
-            </div>
-          </div>
-        </div>
+        <NewItemInvoice
+          item={item}
+          register={register}
+          errors={errors}
+          handleRemoveItem={handleRemoveItem}
+        />
       ))}
       <Button
         icon
